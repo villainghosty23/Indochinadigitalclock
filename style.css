@@ -212,3 +212,20 @@ h1 {
 
 /* Add the Orbitron font for digital look */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+/* Add to the bottom of your existing CSS */
+.world-clock .timezone {
+    font-size: 0.9rem; /* Slightly smaller for longer names */
+    margin-bottom: 5px;
+}
+
+.conversion-result .result-time {
+    font-size: 2rem;
+    color: var(--accent-light);
+    margin: 10px 0;
+    text-align: center;
+}
+
+.conversion-result .result-date {
+    text-align: center;
+    color: var(--text-muted);
+}
