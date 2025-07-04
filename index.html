@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Clock & Time Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Digital Clock & Time Converter</h1>
+
+    <!-- Live Clocks -->
+    <div>
+      <div class="zone-label">Eastern Standard Time (EST)</div>
+      <div class="clock" id="estClock">--:--:--</div>
+
+      <div class="zone-label">Indochina Time (ICT / UTC+7)</div>
+      <div class="clock" id="ictClock">--:--:--</div>
+
+      <div class="date" id="dateNow">--</div>
+    </div>
+
+    <!-- Converter -->
+    <div class="converter">
+      <div class="zone-label">Convert Time Between EST & ICT</div>
+      <div>
+        <input type="time" id="inputTime" value="12:00">
+        <select id="fromZone">
+          <option value="EST">EST</option>
+          <option value="ICT">ICT</option>
+        </select>
+        <button onclick="convertTime()">Convert</button>
+      </div>
+      <div class="converted-time" id="convertedResult">Converted Time: --</div>
+    </div>
+
+    <!-- Toggle -->
+    <div class="toggle-btn">
+      <button onclick="toggleFormat()">Toggle 12/24 Hour Format</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
