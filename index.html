@@ -7,37 +7,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="comparison">
-        <div class="clock-container">
-            <div class="label">INDOCHINA TIME (UTC+7)</div>
-            <div class="time" id="indochina-time">--:--:--</div>
-            <div class="date" id="indochina-date">-- --- ----</div>
+    <div class="main-container">
+        <div class="comparison">
+            <div class="clock-container">
+                <div class="label">INDOCHINA TIME (UTC+7)</div>
+                <div class="time" id="indochina-time">--:--:--</div>
+                <div class="date" id="indochina-date">-- --- ----</div>
+            </div>
+            
+            <div class="clock-container">
+                <div class="label">NEW YORK TIME</div>
+                <div class="time" id="ny-time">--:--:--</div>
+                <div class="date" id="ny-date">-- --- ----</div>
+            </div>
         </div>
         
-        <div class="clock-container">
-            <div class="label">NEW YORK TIME</div>
-            <div class="time" id="ny-time">--:--:--</div>
-            <div class="date" id="ny-date">-- --- ----</div>
+        <div class="time-difference" id="time-difference"></div>
+        
+        <div class="converter">
+            <h3>TIME CONVERTER</h3>
+            <div class="input-group">
+                <label for="from-time">Time</label>
+                <input type="time" id="from-time" step="1">
+            </div>
+            <div class="input-group">
+                <label for="from-zone">From Timezone</label>
+                <select id="from-zone">
+                    <option value="indochina">Indochina Time (UTC+7)</option>
+                    <option value="newyork">New York Time</option>
+                </select>
+            </div>
+            <button id="convert-btn">CONVERT</button>
+            <div class="result" id="conversion-result">Select time and click convert</div>
         </div>
-    </div>
-    
-    <div class="time-difference" id="time-difference"></div>
-    
-    <div class="converter">
-        <h3>TIME CONVERTER</h3>
-        <div class="input-group">
-            <label for="from-time">Time</label>
-            <input type="time" id="from-time" step="1">
-        </div>
-        <div class="input-group">
-            <label for="from-zone">From Timezone</label>
-            <select id="from-zone">
-                <option value="indochina">Indochina Time (UTC+7)</option>
-                <option value="newyork">New York Time</option>
-            </select>
-        </div>
-        <button id="convert-btn">CONVERT</button>
-        <div class="result" id="conversion-result">Select time and click convert</div>
     </div>
     
     <script src="script.js"></script>
