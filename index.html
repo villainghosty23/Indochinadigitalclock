@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indochina ↔ New York Time Converter</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="main-container">
         <div class="comparison">
             <div class="clock-container">
                 <div class="label">INDOCHINA TIME (UTC+7)</div>
-                <div class="time" id="indochina-time">--:--:--</div>
+                <div class="time" id="indochina-time">
+                    <span class="time-value">--:--:--</span>
+                    <span class="am-pm" id="indochina-am-pm"></span>
+                </div>
                 <div class="date" id="indochina-date">-- --- ----</div>
             </div>
             
             <div class="clock-container">
                 <div class="label">NEW YORK TIME</div>
-                <div class="time" id="ny-time">--:--:--</div>
+                <div class="time" id="ny-time">
+                    <span class="time-value">--:--:--</span>
+                    <span class="am-pm" id="ny-am-pm"></span>
+                </div>
                 <div class="date" id="ny-date">-- --- ----</div>
             </div>
         </div>
@@ -35,6 +41,13 @@
                 <select id="from-zone">
                     <option value="indochina">Indochina Time (UTC+7)</option>
                     <option value="newyork">New York Time</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="time-format">Format</label>
+                <select id="time-format">
+                    <option value="12">12-hour</option>
+                    <option value="24">24-hour</option>
                 </select>
             </div>
             <button id="convert-btn">CONVERT</button>
