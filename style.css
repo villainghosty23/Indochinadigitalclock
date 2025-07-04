@@ -1,22 +1,24 @@
-body {
-    background-color: #0a0a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body, html {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0a0a1a;
     font-family: 'Arial', sans-serif;
     color: #9c27b0;
-    overflow: auto;
 }
 
 .main-container {
-    width: 100%;
-    max-width: 800px;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .comparison {
@@ -25,6 +27,7 @@ body {
     justify-content: center;
     gap: 20px;
     width: 100%;
+    max-width: 700px;
     margin-bottom: 20px;
 }
 
@@ -41,19 +44,33 @@ body {
 }
 
 .time {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.time-value {
+    display: inline-block;
+}
+
+.am-pm {
+    font-size: 0.6em;
+    color: #b388ff;
+    margin-left: 5px;
 }
 
 .date {
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: 1rem;
     margin-bottom: 10px;
     color: #673ab7;
 }
 
 .label {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: 1.2rem;
     margin-bottom: 5px;
     color: #b388ff;
 }
@@ -72,7 +89,7 @@ body {
     margin-top: 0;
     color: #b388ff;
     text-align: center;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: 1.2rem;
 }
 
 .input-group {
@@ -83,7 +100,7 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #673ab7;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 0.9rem;
 }
 
 input, select {
@@ -93,7 +110,7 @@ input, select {
     border: 1px solid #5c00b3;
     border-radius: 5px;
     color: #b388ff;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 0.9rem;
 }
 
 button {
@@ -106,7 +123,7 @@ button {
     width: 100%;
     font-weight: bold;
     transition: background-color 0.3s;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 0.9rem;
 }
 
 button:hover {
@@ -120,18 +137,22 @@ button:hover {
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 0.9rem;
 }
 
 .time-difference {
     text-align: center;
     margin: 20px 0;
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: 1rem;
     color: #b388ff;
     width: 100%;
 }
 
 @media (max-width: 600px) {
+    .main-container {
+        padding: 10px;
+    }
+    
     .comparison {
         flex-direction: column;
         align-items: center;
@@ -143,5 +164,13 @@ button:hover {
     
     .converter {
         max-width: 100%;
+    }
+    
+    .time {
+        font-size: 2rem;
+    }
+    
+    .label {
+        font-size: 1rem;
     }
 }
