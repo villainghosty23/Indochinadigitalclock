@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Digital Clock & Time Converter</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Timezone Clock</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Digital Clock & Time Converter</h1>
-
-    <!-- Live Clocks -->
-    <div>
-      <div class="zone-label">Eastern Standard Time (EST)</div>
-      <div class="clock" id="estClock">--:--:--</div>
-
-      <div class="zone-label">Indochina Time (ICT / UTC+7)</div>
-      <div class="clock" id="ictClock">--:--:--</div>
-
-      <div class="date" id="dateNow">--</div>
+    <div class="container">
+        <h1>Digital Timezone Clock</h1>
+        
+        <div class="digital-clock">
+            <div class="clock-display">
+                <div class="timezone">LOCAL TIME</div>
+                <div id="localClock" class="time">00:00:00</div>
+                <div id="localDate" class="date">Wednesday, January 1, 2023</div>
+            </div>
+            
+            <div class="world-clocks">
+                <div class="world-clock">
+                    <div class="timezone">NEW YORK (EST)</div>
+                    <div id="estClock" class="time">00:00:00</div>
+                    <div class="date" id="estDate">Wed Jan 1 2023</div>
+                </div>
+                
+                <div class="world-clock">
+                    <div class="timezone">BANGKOK (ICT)</div>
+                    <div id="ictClock" class="time">00:00:00</div>
+                    <div class="date" id="ictDate">Wed Jan 1 2023</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="converter-container">
+            <h2>Timezone Converter</h2>
+            <div class="converter-controls">
+                <div class="input-group">
+                    <label for="inputTime">Enter Time (HH:MM)</label>
+                    <input type="time" id="inputTime" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="fromZone">Convert From</label>
+                    <select id="fromZone">
+                        <option value="EST">EST (New York)</option>
+                        <option value="ICT">ICT (Bangkok)</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button id="convertBtn" class="btn">Convert Time</button>
+                    <button id="toggleFormatBtn" class="btn secondary">Switch to 12-hour</button>
+                </div>
+            </div>
+            
+            <div id="convertedResult" class="conversion-result">
+                <!-- Results will appear here -->
+            </div>
+        </div>
     </div>
 
-    <!-- Converter -->
-    <div class="converter">
-      <div class="zone-label">Convert Time Between EST & ICT</div>
-      <div>
-        <input type="time" id="inputTime" value="12:00">
-        <select id="fromZone">
-          <option value="EST">EST</option>
-          <option value="ICT">ICT</option>
-        </select>
-        <button onclick="convertTime()">Convert</button>
-      </div>
-      <div class="converted-time" id="convertedResult">Converted Time: --</div>
-    </div>
-
-    <!-- Toggle -->
-    <div class="toggle-btn">
-      <button onclick="toggleFormat()">Toggle 12/24 Hour Format</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
